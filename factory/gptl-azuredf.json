@@ -1,0 +1,9 @@
+{
+	"name": "gptl-azuredf",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "3e5074da-0da6-499f-a032-b6d9ee32fe60",
+		"tenantId": "56caea2f-bce9-4900-8732-5de973940839"
+	}
+}
