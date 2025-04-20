@@ -1,6 +1,65 @@
 {
 	"name": "pl_assignment",
 	"properties": {
+		"activities": [
+			{
+				"name": "ForEach1",
+				"type": "ForEach",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@pipeline().parameters.input_val",
+						"type": "Expression"
+					},
+					"activities": [
+						{
+							"name": "Append variable1",
+							"type": "AppendVariable",
+							"dependsOn": [],
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "append_id",
+								"value": {
+									"value": "@item()['id']",
+									"type": "Expression"
+								}
+							}
+						},
+						{
+							"name": "Append_name",
+							"type": "AppendVariable",
+							"dependsOn": [],
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "append_name",
+								"value": {
+									"value": "@item()['name']",
+									"type": "Expression"
+								}
+							}
+						}
+					]
+				}
+			}
+		],
+		"parameters": {
+			"input_val": {
+				"type": "array",
+				"defaultValue": "[{\"id\":1,\"name\":\"Ram Patil\"},{\"id\":2,\"name\":\"Sham Patil\"},{\"id\":3,\"name\":\"Kiran jadhav\",}]"
+			}
+		},
+		"variables": {
+			"test": {
+				"type": "String"
+			},
+			"append_id": {
+				"type": "Array"
+			},
+			"append_name": {
+				"type": "Array"
+			}
+		},
 		"annotations": []
 	}
 }
